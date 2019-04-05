@@ -11,31 +11,36 @@ public class converter {public static void main(String[]args)
         System.out.print("Enter num, N:");
         int N=keyboard.nextInt();
         if(N==1) {
-            System.out.print("Enter height in inch, inch :");
-            int inch = keyboard.nextInt();
-            System.out.println("Enter 1 to get in ft. ");
-            System.out.println("Enter 2 to get value in cm .");
-            System.out.println("Enter 3 to get value in m .");
-            System.out.print("Enter Serial,S :");
-            int S = keyboard.nextInt();
-            if (inch >= 0) {
-                if (S == 1) {
-                    int F  = inch / 12;
-                    int I = inch % 12;
-                    System.out.println(F + " ft " + I + " inch.");
-                } else if (S == 2) {
-                    double centimeter = (inch * 2.54);
-                    System.out.println(centimeter + " cm. ");
-                } else if (S == 3) {
-                    double centimeter = (inch * 2.54);
-                    double meter = centimeter / 100;
-                    System.out.println(meter + " m.");
+            while (true) {
+                System.out.print("Enter height in inch, inch :");
+                int inch = keyboard.nextInt();
+                System.out.println("Enter 1 to get in ft. ");
+                System.out.println("Enter 2 to get value in cm .");
+                System.out.println("Enter 3 to get value in m .");
+                System.out.print("Enter Serial,S :");
+                int S = keyboard.nextInt();
+                if (inch >= 0) {
+                    if (S == 1) {
+                        int F = inch / 12;
+                        int I = inch % 12;
+                        System.out.println(F + " ft " + I + " inch.");
+                    } else if (S == 2) {
+                        double centimeter = (inch * 2.54);
+                        System.out.println(centimeter + " cm. ");
+                    } else if (S == 3) {
+                        double centimeter = (inch * 2.54);
+                        double meter = centimeter / 100;
+                        System.out.println(meter + " m.");
+                    }
+                } else {
+                    System.out.println("Please enter valid number");
                 }
-            } else {
-                System.out.println("Please enter valid number");
+                System.out.println("Enter to return to previous page Y/N");
+                if(keyboard.next().equals("N")) break;
             }
         }
         else if(N==2) {
+            while (true) {
             System.out.print("Enter weight in kg :");
             int W = keyboard.nextInt();
             System.out.println("Press 1 to convert in gram");
@@ -56,9 +61,12 @@ public class converter {public static void main(String[]args)
                 } else {
                     System.out.println("Please enter valid number");
                 }
-            }
+            }System.out.println("Enter to return to previous page Y/N");
+                if(keyboard.next().equals("N")) break;
+        }
         }
         else if (N==3){
+            while (true) {
             System.out.print("Enter temperature in Celcius :");
             double C = keyboard.nextDouble();
             System.out.println("Press 1 to convert in Fahrenheit");
@@ -75,6 +83,8 @@ public class converter {public static void main(String[]args)
                 }
             }else {
                 System.out.println("Please enter valid number");
+            }System.out.println("Enter to return to previous page Y/N");
+                if(keyboard.next().equals("N")) break;
             }
         }
 
